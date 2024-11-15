@@ -145,8 +145,6 @@ Para comenzar con los ejercicios, sigue estos pasos:
 
 ¡Esperamos tus contribuciones y gracias por tu ayuda para mejorar **AprendeJS**! 🎉
 
-![Banner de Ejercicios](https://github.com/EstebanPajaroDev/Javascript/blob/Primary/Javascript-14-11-2024.gif)
-
 
 
 ### Archivos para Anexar al Repositorio  
@@ -162,4 +160,6 @@ Para comenzar con los ejercicios, sigue estos pasos:
       console.log(a + b);
   }
   suma(3, 5); // Salida: 8
+
+![Banner de Ejercicios](https://github.com/EstebanPajaroDev/Javascript/blob/Primary/Javascript-14-11-2024.gif)
 
