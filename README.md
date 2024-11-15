@@ -74,7 +74,8 @@ Para comenzar con los ejercicios, sigue estos pasos:
 
 1. **Clona el repositorio**:
    ```bash
-   git clone https://github.com/EstebanPajaroDev/tu-repositorio.git
+   git clone https://github.com/EstebanPajaroDev/AprendeJS.git
+
 
 ## 🤝 Cómo Contribuir
 
