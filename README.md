@@ -26,7 +26,9 @@ Este repositorio contiene una colección de ejercicios que cubren:
 - **Lógica de programación**: Problemas que desafiarán tu pensamiento algorítmico.
 - **Manipulación del DOM**: Tareas prácticas para que puedas interactuar con la estructura de una página web utilizando JavaScript.
 
-> **Nota**: Los ejercicios están clasificados por nivel de dificultad, así que puedes empezar desde lo más básico hasta los desafíos más complejos.
+> **Nota**: Hay algunos errores, que debes arreglar y subirlo, ¿Te animas🦾?
+> Los ejercicios están clasificados por nivel de dificultad, así que puedes empezar desde lo más básico hasta los desafíos más complejos. 
+
 
 ---
 
