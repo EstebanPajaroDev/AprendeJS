@@ -11,7 +11,7 @@
 ## 📂 Contenido del Repositorio
 
 1. [Introducción](#introducción)
-2. [Características](#características)
+2. [Características](https://github.com/EstebanPajaroDev/AprendeJS/blob/Primary/README.md#-caracter%C3%ADsticas)
 3. [Ejercicios de Lógica](#ejercicios-de-lógica)
 4. [Ejercicios de DOM](https://github.com/EstebanPajaroDev/AprendeJS/tree/Primary?tab=readme-ov-file#-ejercicios-de-dom)
 5. [Guía de Instalación](https://github.com/EstebanPajaroDev/AprendeJS/tree/Primary?tab=readme-ov-file#%EF%B8%8F-gu%C3%ADa-de-instalaci%C3%B3n)
