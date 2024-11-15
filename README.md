@@ -76,6 +76,74 @@ Para comenzar con los ejercicios, sigue estos pasos:
    ```bash
    git clone https://github.com/EstebanPajaroDev/tu-repositorio.git
 
+## 🤝 Cómo Contribuir
+
+¡Gracias por tu interés en contribuir a **AprendeJS**! Aquí te mostramos cómo puedes hacerlo:
+
+### 1. **Haz un Fork del Repositorio**
+   - Dirígete a la página principal del repositorio en [GitHub](https://github.com/EstebanPajaroDev/AprendeJS).
+   - Haz clic en el botón **"Fork"** en la parte superior derecha para crear tu propia copia del repositorio.
+
+### 2. **Clona el Repositorio**
+   - Una vez que hayas hecho un fork, clona el repositorio en tu máquina local:
+     ```bash
+     git clone https://github.com/tu-usuario/AprendeJS.git
+     ```
+   - Navega a la carpeta del proyecto:
+     ```bash
+     cd AprendeJS
+     ```
+
+### 3. **Crea una Nueva Rama**
+   - Antes de realizar cambios, asegúrate de crear una nueva rama para tu funcionalidad o corrección:
+     ```bash
+     git checkout -b feature/nueva-caracteristica
+     ```
+   - **Nota**: Asegúrate de que el nombre de la rama describa claramente lo que estás contribuyendo.
+
+### 4. **Realiza Cambios**
+   - Realiza los cambios que deseas en el código. Puedes agregar, editar o eliminar archivos según sea necesario.
+   - **Asegúrate de que tus cambios sean coherentes con la estructura del proyecto y sigan las mejores prácticas de codificación.**
+
+### 5. **Haz Commit de los Cambios**
+   - Una vez que hayas realizado los cambios, haz commit de ellos:
+     ```bash
+     git add .
+     git commit -m "Descripción de los cambios realizados"
+     ```
+   - **Nota**: Escribe un mensaje de commit claro y descriptivo.
+
+### 6. **Sube los Cambios a tu Fork**
+   - Sube los cambios a tu repositorio remoto:
+     ```bash
+     git push origin feature/nueva-caracteristica
+     ```
+
+### 7. **Crea un Pull Request**
+   - Dirígete a la página de tu fork en GitHub y haz clic en el botón **"Compare & Pull Request"**.
+   - Añade una descripción detallada de los cambios que has realizado.
+   - Asegúrate de que el pull request esté dirigido al repositorio original y a la rama principal (usualmente `main` o `master`).
+
+### 8. **Espera la Revisión**
+   - Una vez que envíes el pull request, los mantenedores del repositorio revisarán tus cambios.
+   - Si todo está en orden, tu contribución será aceptada y fusionada en el proyecto.
+
+### 9. **Mantente Actualizado**
+   - Si el repositorio recibe cambios mientras trabajas en tu rama, asegúrate de mantener tu fork actualizado:
+     ```bash
+     git fetch upstream
+     git checkout main
+     git merge upstream/main
+     ```
+
+---
+
+### 🌟 Buenas Prácticas
+- **Documentación**: Si agregas nuevas funcionalidades, asegúrate de actualizar la documentación correspondiente.
+- **Pruebas**: Si es posible, agrega pruebas para verificar que tu código funcione correctamente.
+- **Comunidad**: Sé respetuoso con los demás colaboradores. Si tienes dudas, ¡pregunta! Este es un espacio de colaboración.
+
+¡Esperamos tus contribuciones y gracias por tu ayuda para mejorar **AprendeJS**! 🎉
 
 ![Banner de Ejercicios](https://github.com/EstebanPajaroDev/Javascript/blob/Primary/Javascript-14-11-2024.gif)
 
