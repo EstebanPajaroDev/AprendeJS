@@ -14,7 +14,7 @@
 2. [Características](#características)
 3. [Ejercicios de Lógica](#ejercicios-de-lógica)
 4. [Ejercicios de DOM](#ejercicios-de-dom)
-5. [Guía de Instalación](#https://github.com/EstebanPajaroDev/AprendeJS/tree/Primary?tab=readme-ov-file#%EF%B8%8F-gu%C3%ADa-de-instalaci%C3%B3n)
+5. [Guía de Instalación](https://github.com/EstebanPajaroDev/AprendeJS/tree/Primary?tab=readme-ov-file#%EF%B8%8F-gu%C3%ADa-de-instalaci%C3%B3n)
 6. [Cómo Contribuir](#cómo-contribuir)
 7. [Recursos Útiles](#recursos-útiles)
 8. [Contacto](#contacto)
