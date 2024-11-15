@@ -47,10 +47,10 @@ Los ejercicios de lógica están diseñados para ayudarte a mejorar tu capacidad
 
 | Nivel      | Ejercicios |
 |------------|------------|
-| 🟢 **Básico**  | `ejercicio1.js`, `ejercicio2.js`, `ejercicio3.js` |
-| 🔵 **Normal**  | `ejercicio10.js`, `ejercicio11.js`, `ejercicio12.js` |
-| 🟡 **Medio**   | `ejercicio15.js`, `ejercicio16.js`, `ejercicio17.js` |
-| 💥 **Avanzado**| `ejercicio20.js`, `ejercicio21.js`, `ejercicio22.js` |
+| 🟢 **Básico**  | `Conceptos basicos`, `Variables`, `Consola` |
+| 🔵 **Normal**  | `Bucles`, `Arrays`, `Variables` |
+| 🟡 **Medio**   | `JSON`, `Callbacks`, `Funciones` |
+| 💥 **Avanzado**| `APIS`, `Diccionarios`, `Parametros` |
 
 Cada archivo de ejercicio tiene una breve explicación de lo que debes hacer. Además, los ejercicios vienen con pruebas de ejemplo para que puedas comprobar tus soluciones.
 
