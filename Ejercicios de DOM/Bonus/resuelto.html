@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios de JavaScript</title>
+    <style>
+        .carrusel {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+        .item {
+            height: 50px;
+            background-color: #ddd;
+            margin: 5px 0;
+            transition: transform 0.5s;
+        }
+        #popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border: 2px solid #000;
+            display: none;
+        }
+        .completada {
+            text-decoration: line-through;
+            color: grey;
+        }
+        #albumFotos img {
+            max-width: 200px;
+            margin: 5px;
+        }
+        .progress-circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 10px solid #ddd;
+            position: relative;
+            display: inline-block;
+        }
+        .progress-circle .fill {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            position: absolute;
+            clip: rect(0, 100px, 100px, 50px);
+            background-color: #4caf50;
+        }
+        .progress-circle .fill-half {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Ejercicios de JavaScript</h2>
+
+    <!-- Ejercicio 1: Cambiar idioma -->
+    <button id="cambiarIdioma">Cambiar Idioma</button>
+    <div id="textoIdioma">Hola, ¿cómo estás?</div>
+    <br><br>
+
+    <!-- Ejercicio 2: Guardar configuración en localStorage -->
+    <label for="colorFondo">Color de Fondo:</label>
+    <input type="color" id="colorFondo" />
+    <button id="guardar">Guardar Configuración</button>
+    <br><br>
+
+    <!-- Ejercicio 3: Carrusel vertical -->
+    <div class="carrusel">
+        <div class="item">Elemento 1</div>
+        <div class="item">Elemento 2</div>
+        <div class="item">Elemento 3</div>
+    </div>
+    <br><br>
+
+    <!-- Ejercicio 4: Mostrar detalles del producto -->
+    <button id="detallesProducto">Ver Detalles del Producto</button>
+    <div id="popup">
+        <div>Detalles del producto...</div>
+        <button id="cerrarPopup">Cerrar</button>
+    </div>
+    <br><br>
+
+    <!-- Ejercicio 5: Reproductor de música -->
+    <audio id="audio" controls>
+        <source src="musica.mp3" type="audio/mp3">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+    <button id="pausar">Pausar</button>
+    <button id="cambiarCancion">Cambiar Canción</button>
+    <br><br>
+
+    <!-- Ejercicio 6: Sistema de tareas pendientes -->
+    <input type="text" id="nuevaTarea" placeholder="Nueva tarea">
+    <button id="agregarTarea">Agregar</button>
+    <ul id="listaTareas"></ul>
+
+    <!-- Ejercicio 7: Mapa interactivo -->
+    <h3>Haz clic en el mapa para agregar marcadores:</h3>
+    <div id="mapa" style="width: 100%; height: 300px; background-color: lightgray;"></div>
+    <br><br>
+
+    <!-- Ejercicio 8: Generar contraseñas seguras -->
+    <button id="generarContrasena">Generar Contraseña Segura</button>
+    <div id="contrasena"></div>
+    <br><br>
+
+    <!-- Ejercicio 9: Cargar contenido al hacer scroll -->
+    <div id="contenidoScroll" style="height: 300px; overflow: auto;">
+        <div>Contenido inicial</div>
+    </div>
+    <br><br>
+
+    <!-- Ejercicio 10: Votación con emojis -->
+    <button id="votacion1">👍</button>
+    <button id="votacion2">👎</button>
+    <div id="resultados"></div>
+    <br><br>
+
+    <!-- Ejercicio 11: Reacción al mouseover -->
+    <div id="elementosInteractivos">
+        <button class="interactivo">Botón 1</button>
+        <button class="interactivo">Botón 2</button>
+        <button class="interactivo">Botón 3</button>
+    </div>
+    <br><br>
+
+    <!-- Ejercicio 12: Álbum de fotos -->
+    <div id="albumFotos"></div>
+    <input type="file" id="fotoInput" accept="image/*">
+    <br><br>
+
+    <!-- Ejercicio 13: Conversor de unidades -->
+    <label for="centimetros">Centímetros:</label>
+    <input type="number" id="centimetros" />
+    <button id="convertir">Convertir a Pulgadas</button>
+    <div id="resultadoConversion"></div>
+    <br><br>
+
+    <!-- Ejercicio 14: Temporizador de cuenta regresiva -->
+    <button id="iniciarTemporizador">Iniciar Temporizador</button>
+    <div id="temporizador"></div>
+    <br><br>
+
+    <!-- Ejercicio 15: Arrastrar y redimensionar imágenes -->
+    <img src="https://via.placeholder.com/150" id="imagenRedimensionable" style="width: 150px; cursor: pointer;">
+    <br><br>
+
+    <!-- Ejercicio 16: Buscador de emojis -->
+    <input type="text" id="buscarEmojis" placeholder="Buscar emojis">
+    <div id="emojiResultados"></div>
+    <br><br>
+
+    <!-- Ejercicio 17: Gráfico circular -->
+    <div id="graficoCircular" class="progress-circle">
+        <div class="fill"></div>
+    </div>
+    <br><br>
+
+    <!-- Ejercicio 18: Tooltips al pasar el mouse -->
+    <button title="Este es un tooltip">Botón con Tooltip</button>
+    <br><br>
+
+    <!-- Ejercicio 19: Reproductor de video -->
+    <video id="video" controls>
+        <source src="video.mp4" type="video/mp4">
+        Tu navegador no soporta el elemento de video.
+    </video>
+    <br><br>
+
+    <!-- Ejercicio 20: Sistema de notas -->
+    <input type="text" id="nota" placeholder="Nueva Nota">
+    <button id="guardarNota">Guardar Nota</button>
+    <div id="notas"></div>
+
+    <script>
+        // Ejercicio 1: Cambiar idioma
+        document.getElementById('cambiarIdioma').addEventListener('click', () => {
+            const textoIdioma = document.getElementById('textoIdioma');
+            if (textoIdioma.textContent === 'Hola, ¿cómo estás?') {
+                textoIdioma.textContent = 'Hello, how are you?';
+            } else {
+                textoIdioma.textContent = 'Hola, ¿cómo estás?';
+            }
+        });
+
+        // Ejercicio 2: Guardar configuración en localStorage
+        document.getElementById('guardar').addEventListener('click', () => {
+            const colorFondo = document.getElementById('colorFondo').value;
+            localStorage.setItem('colorFondo', colorFondo);
+            document.body.style.backgroundColor = colorFondo;
+        });
+
+        window.onload = () => {
+            const colorFondoGuardado = localStorage.getItem('colorFondo');
+            if (colorFondoGuardado) {
+                document.body.style.backgroundColor = colorFondoGuardado;
+                document.getElementById('colorFondo').value = colorFondoGuardado;
+            }
+        };
+
+        // Ejercicio 3: Carrusel vertical
+        let index = 0;
+        const items = document.querySelectorAll('.item');
+        
+        function moverCarrusel() {
+            index++;
+            if (index >= items.length) index = 0;
+            const top = -index * 60;
+            document.querySelector('.carrusel').style.transform = `translateY(${top}px)`;
+        }
+
+        setInterval(moverCarrusel, 2000);
+
+        // Ejercicio 4: Mostrar detalles del producto
+        document.getElementById('detallesProducto').addEventListener('click', () => {
+            document.getElementById('popup').style.display = 'block';
+        });
+
+        document.getElementById('cerrarPopup').addEventListener('click', () => {
+            document.getElementById('popup').style.display = 'none';
+        });
+
+        // Ejercicio 5: Reproductor de música
+        const audio = document.getElementById('audio');
+        document.getElementById('pausar').addEventListener('click', () => {
+            audio.pause();
+        });
+
+        document.getElementById('cambiarCancion').addEventListener('click', () => {
+            audio.src = "otraCancion.mp3";
+            audio.play();
+        });
+
+        // Ejercicio 6: Sistema de tareas pendientes
+        const listaTareas = document.getElementById('listaTareas');
+        document.getElementById('agregarTarea').addEventListener('click', () => {
+            const tarea = document.getElementById('nuevaTarea').value;
+            if (tarea) {
+                const li = document.createElement('li');
+                li.textContent = tarea;
+                listaTareas.appendChild(li);
+                document.getElementById('nuevaTarea').value = '';
+                li.addEventListener('click', () => {
+                    li.classList.toggle('completada');
+                });
+            }
+        });
+
+        // Ejercicio 7: Mapa interactivo
+        document.getElementById('mapa').addEventListener('click', (e) => {
+            const marcador = document.createElement('div');
+            marcador.style.position = 'absolute';
+            marcador.style.left = `${e.clientX}px`;
+            marcador.style.top = `${e.clientY}px`;
+            marcador.textContent = '📍';
+            document.getElementById('mapa').appendChild(marcador);
+        });
+
+        // Ejercicio 8: Generar contraseñas seguras
+        document.getElementById('generarContrasena').addEventListener('click', () => {
+            const contrasena = Math.random().toString(36).slice(-8);
+            document.getElementById('contrasena').textContent = contrasena;
+        });
+
+        // Ejercicio 9: Cargar contenido al hacer scroll
+        document.getElementById('contenidoScroll').addEventListener('scroll', () => {
+            if (document.getElementById('contenidoScroll').scrollTop + document.getElementById('contenidoScroll').clientHeight >= document.getElementById('contenidoScroll').scrollHeight) {
+                const nuevoContenido = document.createElement('div');
+                nuevoContenido.textContent = 'Más contenido cargado';
+                document.getElementById('contenidoScroll').appendChild(nuevoContenido);
+            }
+        });
+
+        // Ejercicio 10: Votación con emojis
+        let votos = { '👍': 0, '👎': 0 };
+        document.getElementById('votacion1').addEventListener('click', () => {
+            votos['👍']++;
+            actualizarResultados();
+        });
+        document.getElementById('votacion2').addEventListener('click', () => {
+            votos['👎']++;
+            actualizarResultados();
+        });
+
+        function actualizarResultados() {
+            document.getElementById('resultados').textContent = `👍: ${votos['👍']}, 👎: ${votos['👎']}`;
+        }
+
+        // Ejercicio 11: Reacción al mouseover
+        document.querySelectorAll('.interactivo').forEach((boton) => {
+            boton.addEventListener('mouseover', () => {
+                boton.style.backgroundColor = 'yellow';
+            });
+            boton.addEventListener('mouseout', () => {
+                boton.style.backgroundColor = '';
+            });
+        });
+
+        // Ejercicio 12: Álbum de fotos
+        document.getElementById('fotoInput').addEventListener('change', (event) => {
+            const archivo = event.target.files[0];
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                const img = document.createElement('img');
+                img.src = e.target.result;
+                document.getElementById('albumFotos').appendChild(img);
+            };
+            reader.readAsDataURL(archivo);
+        });
+
+        // Ejercicio 13: Conversor de unidades
+        document.getElementById('convertir').addEventListener('click', () => {
+            const cm = document.getElementById('centimetros').value;
+            const pulgadas = cm / 2.54;
+            document.getElementById('resultadoConversion').textContent = `${cm} cm = ${pulgadas.toFixed(2)} pulgadas`;
+        });
+
+        // Ejercicio 14: Temporizador de cuenta regresiva
+        let temporizador;
+        document.getElementById('iniciarTemporizador').addEventListener('click', () => {
+            let tiempoRestante = 10;
+            temporizador = setInterval(() => {
+                if (tiempoRestante <= 0) {
+                    clearInterval(temporizador);
+                    document.getElementById('temporizador').textContent = '¡Tiempo terminado!';
+                } else {
+                    document.getElementById('temporizador').textContent = `${tiempoRestante} segundos restantes`;
+                    tiempoRestante--;
+                }
+            }, 1000);
+        });
+
+        // Ejercicio 15: Arrastrar y redimensionar imágenes
+        const imagen = document.getElementById('imagenRedimensionable');
+        imagen.addEventListener('mousedown', (e) => {
+            const offsetX = e.clientX - imagen.offsetLeft;
+            const offsetY = e.clientY - imagen.offsetTop;
+            const mouseMoveHandler = (e) => {
+                imagen.style.left = `${e.clientX - offsetX}px`;
+                imagen.style.top = `${e.clientY - offsetY}px`;
+            };
+            document.addEventListener('mousemove', mouseMoveHandler);
+
+            imagen.addEventListener('mouseup', () => {
+                document.removeEventListener('mousemove', mouseMoveHandler);
+            });
+        });
+
+        // Ejercicio 16: Buscador de emojis
+        document.getElementById('buscarEmojis').addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+            const emojis = ['😊', '😂', '😍', '🤔', '😎'];
+            const resultados = emojis.filter(emoji => emoji.includes(query));
+            document.getElementById('emojiResultados').textContent = resultados.join(' ');
+        });
+
+        // Ejercicio 17: Gráfico circular
+        const progressCircle = document.querySelector('.progress-circle');
+        const fill = progressCircle.querySelector('.fill');
+        fill.style.clip = 'rect(0, 100px, 100px, 50px)';
+        setTimeout(() => {
+            fill.classList.add('fill-half');
+        }, 1000);
+
+        // Ejercicio 18: Tooltips al pasar el mouse
+        document.querySelectorAll('[title]').forEach(element => {
+            element.addEventListener('mouseover', () => {
+                const tooltip = document.createElement('div');
+                tooltip.textContent = element.getAttribute('title');
+                tooltip.style.position = 'absolute';
+                tooltip.style.backgroundColor = 'black';
+                tooltip.style.color = 'white';
+                tooltip.style.padding = '5px';
+                document.body.appendChild(tooltip);
+
+                element.addEventListener('mousemove', (e) => {
+                    tooltip.style.left = `${e.pageX + 5}px`;
+                    tooltip.style.top = `${e.pageY + 5}px`;
+                });
+
+                element.addEventListener('mouseout', () => {
+                    tooltip.remove();
+                });
+            });
+        });
+
+        // Ejercicio 19: Reproductor de video
+        const video = document.getElementById('video');
+        video.addEventListener('play', () => {
+            console.log('El video está reproduciéndose');
+        });
+
+        // Ejercicio 20: Sistema de notas
+        document.getElementById('guardarNota').addEventListener('click', () => {
+            const nota = document.getElementById('nota').value;
+            const divNota = document.createElement('div');
+            divNota.textContent = nota;
+            document.getElementById('notas').appendChild(divNota);
+            document.getElementById('nota').value = '';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicios DOM - Nivel Básico</title>
+    <style>
+      .oculto {
+        display: none;
+      }
+      .activo {
+        font-weight: bold;
+      }
+      .tooltip {
+        border: 1px solid #ccc;
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="titulo">Título Original</h1>
+    <div
+      id="caja"
+      style="width: 200px; height: 200px; background-color: lightgray"
+    ></div>
+
+    <p id="mensaje">Haz clic aquí para cambiar el mensaje</p>
+
+    <p id="texto">Texto con tamaño de fuente por defecto.</p>
+
+    <button id="boton">Botón</button>
+
+    <img
+      id="imagen"
+      src="https://images.unsplash.com/photo-1731493710740-136a5ce91c57?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxN3x8fGVufDB8fHx8fA%3D%3D"
+      alt="Imagen original"
+      width="150"
+    />
+
+    <button id="alerta">Mostrar mensaje en consola</button>
+
+    <ul id="lista">
+      <li>Elemento 1</li>
+      <li>Elemento 2</li>
+    </ul>
+
+    <div id="contenido"></div>
+
+    <a href="#" class="enlace">Enlace 1</a>
+    <a href="#" class="enlace">Enlace 2</a>
+
+    <div id="borrar">Este elemento se borrará</div>
+
+    <input type="text" id="input" value="Texto inicial" />
+
+    <div
+      class="caja"
+      style="width: 100px; height: 100px; background-color: pink"
+    ></div>
+
+    <div id="duplicar">Elemento a duplicar</div>
+
+    <div id="html">Texto original</div>
+
+    <p id="alertar">Texto para la alerta</p>
+
+    <button id="deshabilitar">Botón Deshabilitado</button>
+
+    <span class="tooltip">Pasa el mouse aquí</span>
+
+    <div
+      id="cursor"
+      style="width: 100px; height: 100px; background-color: yellow"
+    >
+      Pasa el cursor aquí
+    </div>
+
+    <div
+      id="transparente"
+      style="width: 100px; height: 100px; background-color: blue; opacity: 1"
+    >
+      Elemento transparente
+    </div>
+
+    <ul id="lista"></ul>
+
+    <button id="color">Cambia mi color</button>
+
+    <div id="test-div-1">Div 1</div>
+    <div id="test-div-2">Div 2</div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Ejercicio 1: Cambia el texto de un elemento con id "titulo" por "¡Hola, DOM!".
+        document.getElementById("titulo").textContent = "¡Hola, DOM!";
+
+        // Ejercicio 2: Cambia el color de fondo de un elemento con id "caja" a azul.
+        document.getElementById("caja").style.backgroundColor = "red";
+
+        // Ejercicio 3: Esconde un elemento con la clase "oculto".
+        document.querySelector(".oculto").style.display = "none";
+
+        // Ejercicio 4: Cambia el contenido de un párrafo con id "mensaje" al hacer clic en él.
+        document
+          .getElementById("mensaje")
+          .addEventListener("click", function () {
+            this.textContent = "¡Has hecho clic en el mensaje!";
+          });
+
+        // Ejercicio 5: Cambia el tamaño de fuente de un elemento con id "texto" a 20px.
+        document.getElementById("texto").style.fontSize = "20px";
+
+        // Ejercicio 6: Agrega una clase "activo" a un elemento con id "boton".
+        document.getElementById("boton").classList.add("activo");
+
+        // Ejercicio 7: Cambia la imagen de una etiqueta <img> con id "imagen" por una nueva URL.
+        document.getElementById("imagen").src =
+          "https://images.unsplash.com/photo-1731530357802-08d982917720?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzNHx8fGVufDB8fHx8fA%3D%3D";
+
+        // Ejercicio 8: Muestra un mensaje en consola cuando se presiona un botón con id "alerta".
+        document
+          .getElementById("alerta")
+          .addEventListener("click", function () {
+            console.log("¡Botón presionado!");
+          });
+
+        // Ejercicio 9: Cambia el color de texto de todos los elementos <li> a rojo.
+        const listItems = document.querySelectorAll("li");
+        listItems.forEach(function (item) {
+          item.style.color = "red";
+        });
+
+        // Ejercicio 10: Agrega un nuevo elemento <p> al final de un contenedor con id "contenido".
+        const nuevoParrafo = document.createElement("p");
+        nuevoParrafo.textContent = "Este es un nuevo párrafo.";
+        document.getElementById("contenido").appendChild(nuevoParrafo);
+
+        // Ejercicio 11: Cambia el texto de todos los elementos con clase "enlace" por "Visitado".
+        const enlaces = document.querySelectorAll(".enlace");
+        enlaces.forEach(function (enlace) {
+          enlace.textContent = "Visitado";
+        });
+
+        // Ejercicio 12: Remueve un elemento con id "borrar".
+        const elementoABorrar = document.getElementById("borrar");
+        elementoABorrar.remove();
+
+        // Ejercicio 13: Cambia el valor de un campo de texto con id "input" a "Escribe aquí".
+        document.getElementById("input").value = "Escribe aquí";
+
+        // Ejercicio 14: Cambia el borde de un elemento con clase "caja" a 2px sólido negro.
+        document.querySelector(".caja").style.border = "2px solid black";
+
+        // Ejercicio 15: Duplica un elemento con id "duplicar" y añádelo al mismo contenedor.
+        const elementoOriginal = document.getElementById("duplicar");
+        const clonElemento = elementoOriginal.cloneNode(true);
+        elementoOriginal.parentNode.appendChild(clonElemento);
+
+        // Ejercicio 16: Cambia el contenido HTML de un elemento con id "html" por <b>Texto en negrita</b>.
+        document.getElementById("html").innerHTML = "<b>Texto en negrita</b>";
+
+        // Ejercicio 17: Muestra una alerta con el contenido de un <p> con id "alertar".
+        const contenidoParrafo = document.getElementById("alertar").textContent;
+        alert(contenidoParrafo);
+
+        // Ejercicio 18: Deshabilita un botón con id "deshabilitar".
+        document.getElementById("deshabilitar").disabled = true;
+
+        // Ejercicio 19: Agrega un atributo title con el valor "Ejemplo" a un elemento con clase "tooltip".
+        document.querySelector(".tooltip").setAttribute("title", "Ejemplo");
+
+        // Ejercicio 20: Cambia el estilo de cursor de un elemento con id "cursor" a "pointer".
+        document.getElementById("cursor").style.cursor = "pointer";
+
+        // Ejercicio 21: Cambia la opacidad de un elemento con id "transparente" a 0.5.
+        document.getElementById("transparente").style.opacity = "0.5";
+
+        // Ejercicio 22: Agrega un nuevo elemento <li> con texto "Nuevo elemento" a una lista con id "lista".
+        const nuevoElementoLista = document.createElement("li");
+        nuevoElementoLista.textContent = "Nuevo elemento";
+        document.getElementById("lista").appendChild(nuevoElementoLista);
+
+        // Ejercicio 23: Cambia el contenido del primer elemento <h1> en la página a "Título Modificado".
+        document.querySelector("h1").textContent = "Título Modificado";
+
+        // Ejercicio 24: Agrega un evento que cambie el color de un botón con id "color" al pasar el mouse.
+        document
+          .getElementById("color")
+          .addEventListener("mouseover", function () {
+            this.style.backgroundColor = "yellow";
+          });
+
+        // Ejercicio 25: Muestra el número de elementos <div> en consola.
+        const divs = document.querySelectorAll("div");
+        console.log(`Número de elementos <div>: ${divs.length}`);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios de Nivel Medio</title>
+    <style>
+        .hidden { display: none; }
+        .zoomed { transform: scale(2); }
+        #slider img { width: 100%; }
+        #reloj { font-size: 24px; }
+        #trazador { width: 100%; height: 200px; background-color: #f0f0f0; position: relative; }
+        #contenidoTexto { padding: 10px; background-color: #f8f8f8; }
+        #carrusel { font-size: 24px; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<h1>Ejercicios de Nivel Medio</h1>
+
+<!-- Ejercicio 1: Contador descendente -->
+<div id="reloj"></div>
+
+<!-- Ejercicio 2: Lista dinámica -->
+<button id="agregarLista">Agregar Lista</button>
+<ul id="listaDinamica"></ul>
+
+<!-- Ejercicio 3: Slider de imágenes -->
+<div id="slider">
+    <img src="https://via.placeholder.com/400x300/ff0000/ffffff?text=Imagen+1" alt="Imagen 1">
+    <img src="https://via.placeholder.com/400x300/00ff00/ffffff?text=Imagen+2" alt="Imagen 2">
+    <img src="https://via.placeholder.com/400x300/0000ff/ffffff?text=Imagen+3" alt="Imagen 3">
+</div>
+
+<!-- Ejercicio 4: Filtro de búsqueda -->
+<input type="text" id="busquedaInput" placeholder="Buscar">
+<ul id="busqueda">
+    <li>Manzana</li>
+    <li>Banana</li>
+    <li>Cereza</li>
+    <li>Durazno</li>
+</ul>
+
+<!-- Ejercicio 5: Ordenar tabla -->
+<table id="tablaOrden">
+    <tr><th>Nombre</th><th>Edad</th></tr>
+    <tr><td>Alice</td><td>23</td></tr>
+    <tr><td>Bob</td><td>34</td></tr>
+    <tr><td>Charlie</td><td>28</td></tr>
+</table>
+
+<!-- Ejercicio 6: Carrusel de texto -->
+<div id="carrusel">Mensaje 1</div>
+
+<!-- Ejercicio 7: Formulario dinámico -->
+<button id="agregarCampo">Agregar Campo</button>
+<form id="formulario"></form>
+
+<!-- Ejercicio 8: Dibujar punto con el mouse -->
+<div id="trazador"></div>
+
+<!-- Ejercicio 9: Alternar imagen -->
+<button id="imagenButton">Mostrar/Ocultar Imagen</button>
+<img id="imagenToggle" src="https://via.placeholder.com/150" class="hidden" alt="Imagen Oculta">
+
+<!-- Ejercicio 10: Menú desplegable -->
+<button id="menu">Mostrar/Ocultar Menú</button>
+<ul id="menuDesplegable" class="hidden">
+    <li>Opción 1</li>
+    <li>Opción 2</li>
+    <li>Opción 3</li>
+</ul>
+
+<!-- Ejercicio 11: Color aleatorio -->
+<button id="colorAleatorio">Cambiar Color</button>
+<div id="contenedorColor">
+    <p>Texto 1</p>
+    <p>Texto 2</p>
+    <p>Texto 3</p>
+</div>
+
+<!-- Ejercicio 12: Descargar archivo -->
+<button id="descargarTexto">Descargar Texto</button>
+<div id="contenidoTexto">Contenido para descargar como texto.</div>
+
+<!-- Ejercicio 13: Arrastrar y soltar lista -->
+<ul id="listaReordenable">
+    <li draggable="true">Elemento 1</li>
+    <li draggable="true">Elemento 2</li>
+    <li draggable="true">Elemento 3</li>
+</ul>
+
+<!-- Ejercicio 14: Pestañas -->
+<div id="pestanas">
+    <button data-tab="1">Pestaña 1</button>
+    <button data-tab="2">Pestaña 2</button>
+    <div id="tab1" class="tab-content">Contenido de Pestaña 1</div>
+    <div id="tab2" class="tab-content hidden">Contenido de Pestaña 2</div>
+</div>
+
+<!-- Ejercicio 15: Mostrar tiempo transcurrido -->
+<button id="temporizador">Mostrar tiempo</button>
+<div id="tiempoTranscurrido"></div>
+
+<!-- Ejercicio 16: Autosugerencia -->
+<input type="text" id="autosugerencia" placeholder="Escribe algo">
+<div id="sugerencias"></div>
+
+<!-- Ejercicio 17: Cambiar tema -->
+<button id="tema">Cambiar Tema</button>
+
+<!-- Ejercicio 18: Arrastrar imagen -->
+<img id="imagenDrag" src="https://via.placeholder.com/150" alt="Imagen" draggable="true">
+<div id="destino" style="width: 200px; height: 200px; background-color: #f0f0f0;"></div>
+
+<!-- Ejercicio 19: Reloj analógico -->
+<div id="relojAnalogico">
+    <div id="manecillaHora" style="position: absolute; top: 50%; left: 50%; width: 100px; height: 5px; background-color: black;"></div>
+</div>
+
+<!-- Ejercicio 20: Modal -->
+<button id="mostrarModal">Mostrar Modal</button>
+<div id="modal" class="hidden">
+    <div>
+        <p>Este es un modal</p>
+        <button id="cerrarModal">Cerrar Modal</button>
+    </div>
+</div>
+
+<!-- Ejercicio 21: Contador de clicks -->
+<button id="contadorClicks">Haz clic</button>
+<p id="contador">0</p>
+
+<!-- Ejercicio 22: Zoom al hacer doble clic -->
+<div class="zoom">Elemento para hacer zoom</div>
+
+<!-- Ejercicio 23: Editor de texto -->
+<div id="editorTexto" contenteditable="true">Edita este texto</div>
+
+<!-- Ejercicio 24: Reordenar columnas -->
+<table id="tablaColumnas" border="1">
+    <thead>
+        <tr>
+            <th draggable="true">Columna 1</th>
+            <th draggable="true">Columna 2</th>
+            <th draggable="true">Columna 3</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>Dato 1</td><td>Dato 2</td><td>Dato 3</td></tr>
+    </tbody>
+</table>
+
+<!-- Ejercicio 25: Copiar tabla -->
+<button id="copiarTabla">Copiar Tabla</button>
+<div id="tablaOriginal">
+    <table border="1">
+        <tr><td>Fila 1</td><td>Fila 2</td></tr>
+    </table>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+        // Ejercicio 1: Contador descendente
+        let contador = 10;
+        const reloj = document.getElementById('reloj');
+        const intervalo = setInterval(() => {
+            reloj.textContent = contador;
+            if (contador === 0) clearInterval(intervalo);
+            contador--;
+        }, 1000);
+
+        // Ejercicio 2: Lista dinámica
+        document.getElementById('agregarLista').addEventListener('click', () => {
+            const lista = document.getElementById('listaDinamica');
+            for (let i = 0; i < 5; i++) {
+                const li = document.createElement('li');
+                li.textContent = `Elemento ${Math.floor(Math.random() * 100)}`;
+                lista.appendChild(li);
+            }
+        });
+
+        // Ejercicio 3: Slider de imágenes
+        const sliderImages = document.querySelectorAll('#slider img');
+        let currentIndex = 0;
+        setInterval(() => {
+            sliderImages[currentIndex].style.display = 'none';
+            currentIndex = (currentIndex + 1) % sliderImages.length;
+            sliderImages[currentIndex].style.display = 'block';
+        }, 3000);
+
+        // Ejercicio 4: Filtro de búsqueda
+        document.getElementById('busquedaInput').addEventListener('input', (e) => {
+            const searchQuery = e.target.value.toLowerCase();
+            const items = document.querySelectorAll('#busqueda li');
+            items.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                item.style.display = text.includes(searchQuery) ? 'block' : 'none';
+            });
+        });
+
+        // Ejercicio 5: Ordenar tabla
+        const tablaOrden = document.getElementById('tablaOrden');
+        tablaOrden.addEventListener('click', () => {
+            const rows = Array.from(tablaOrden.rows).slice(1);
+            rows.sort((a, b) => a.cells[0].textContent.localeCompare(b.cells[0].textContent));
+            rows.forEach(row => tablaOrden.appendChild(row));
+        });
+
+        // Ejercicio 6: Carrusel de texto
+        const mensajes = ['Mensaje 1', 'Mensaje 2', 'Mensaje 3'];
+        let carruselIndex = 0;
+        setInterval(() => {
+            document.getElementById('carrusel').textContent = mensajes[carruselIndex];
+            carruselIndex = (carruselIndex + 1) % mensajes.length;
+        }, 2000);
+
+        // Ejercicio 7: Formulario dinámico
+        document.getElementById('agregarCampo').addEventListener('click', () => {
+            const form = document.getElementById('formulario');
+            const input = document.createElement('input');
+            input.type = 'text';
+            input.placeholder = 'Nuevo campo';
+            form.appendChild(input);
+        });
+
+        // Ejercicio 8: Dibujar punto con el mouse
+        document.getElementById('trazador').addEventListener('mousemove', (e) => {
+            const point = document.createElement('div');
+            point.style.position = 'absolute';
+            point.style.width = '5px';
+            point.style.height = '5px';
+            point.style.backgroundColor = 'red';
+            point.style.left = `${e.offsetX}px`;
+            point.style.top = `${e.offsetY}px`;
+            document.getElementById('trazador').appendChild(point);
+        });
+
+        // Ejercicio 9: Alternar imagen
+        document.getElementById('imagenButton').addEventListener('click', () => {
+            document.getElementById('imagenToggle').classList.toggle('hidden');
+        });
+
+        // Ejercicio 10: Menú desplegable
+        document.getElementById('menu').addEventListener('click', () => {
+            document.getElementById('menuDesplegable').classList.toggle('hidden');
+        });
+
+        // Ejercicio 11: Color aleatorio
+        document.getElementById('colorAleatorio').addEventListener('click', () => {
+            const color = '#' + Math.floor(Math.random()*16777215).toString(16);
+            document.querySelectorAll('#contenedorColor p').forEach(p => p.style.color = color);
+        });
+
+        // Ejercicio 12: Descargar archivo
+        document.getElementById('descargarTexto').addEventListener('click', () => {
+            const texto = document.getElementById('contenidoTexto').textContent;
+            const blob = new Blob([texto], { type: 'text/plain' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'contenido.txt';
+            link.click();
+        });
+
+        // Ejercicio 13: Arrastrar y soltar lista
+        const listaReordenable = document.getElementById('listaReordenable');
+        listaReordenable.addEventListener('dragstart', (e) => {
+            e.dataTransfer.setData('text/plain', e.target.textContent);
+        });
+
+        listaReordenable.addEventListener('dragover', (e) => {
+            e.preventDefault();
+        });
+
+        listaReordenable.addEventListener('drop', (e) => {
+            e.preventDefault();
+            const data = e.dataTransfer.getData('text/plain');
+            const draggedItem = document.querySelector(`li:contains(${data})`);
+            const targetItem = e.target;
+            listaReordenable.insertBefore(draggedItem, targetItem);
+        });
+
+        // Ejercicio 14: Pestañas
+        document.querySelectorAll('#pestanas button').forEach(button => {
+            button.addEventListener('click', () => {
+                document.querySelectorAll('.tab-content').forEach(tab => tab.classList.add('hidden'));
+                document.getElementById(`tab${button.dataset.tab}`).classList.remove('hidden');
+            });
+        });
+
+        // Ejercicio 15: Mostrar tiempo transcurrido
+        let tiempoInicio;
+        document.getElementById('temporizador').addEventListener('click', () => {
+            if (!tiempoInicio) {
+                tiempoInicio = Date.now();
+                document.getElementById('tiempoTranscurrido').textContent = 'Esperando...';
+            } else {
+                const tiempoFinal = Date.now();
+                const tiempoTranscurrido = (tiempoFinal - tiempoInicio) / 1000;
+                document.getElementById('tiempoTranscurrido').textContent = `Tiempo transcurrido: ${tiempoTranscurrido.toFixed(2)} segundos`;
+            }
+        });
+
+        // Ejercicio 16: Autosugerencia
+        const autosugerencia = document.getElementById('autosugerencia');
+        autosugerencia.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+            const opciones = ['Apple', 'Banana', 'Cherry', 'Date', 'Elderberry', 'Fig', 'Grape'];
+            const sugerencias = opciones.filter(opcion => opcion.toLowerCase().includes(query));
+            document.getElementById('sugerencias').innerHTML = sugerencias.map(s => `<div>${s}</div>`).join('');
+        });
+
+        // Ejercicio 17: Cambiar tema
+        document.getElementById('tema').addEventListener('click', () => {
+            document.body.classList.toggle('oscuro');
+            document.body.classList.toggle('claro');
+        });
+
+        // Ejercicio 18: Arrastrar imagen
+        document.getElementById('imagenDrag').addEventListener('dragstart', (e) => {
+            e.dataTransfer.setData('text/plain', e.target.id);
+        });
+
+        document.getElementById('destino').addEventListener('dragover', (e) => {
+            e.preventDefault();
+        });
+
+        document.getElementById('destino').addEventListener('drop', (e) => {
+            e.preventDefault();
+            const imageId = e.dataTransfer.getData('text/plain');
+            const draggedImage = document.getElementById(imageId);
+            e.target.appendChild(draggedImage);
+        });
+
+        // Ejercicio 19: Reloj analógico
+        setInterval(() => {
+            const date = new Date();
+            const hora = date.getHours();
+            const minutos = date.getMinutes();
+            const segundos = date.getSeconds();
+            document.getElementById('manecillaHora').style.transform = `rotate(${(hora * 30) + (minutos / 2)}deg)`;
+        }, 1000);
+
+        // Ejercicio 20: Modal
+        document.getElementById('mostrarModal').addEventListener('click', () => {
+            document.getElementById('modal').classList.remove('hidden');
+        });
+
+        document.getElementById('cerrarModal').addEventListener('click', () => {
+            document.getElementById('modal').classList.add('hidden');
+        });
+
+        // Ejercicio 21: Contador de clicks
+        let clicks = 0;
+        document.getElementById('contadorClicks').addEventListener('click', () => {
+            clicks++;
+            document.getElementById('contador').textContent = clicks;
+        });
+
+        // Ejercicio 22: Zoom al hacer doble clic
+        document.querySelectorAll('.zoom').forEach(element => {
+            element.addEventListener('dblclick', () => {
+                element.classList.toggle('zoomed');
+            });
+        });
+
+        // Ejercicio 23: Editor de texto
+        document.getElementById('editorTexto').addEventListener('input', () => {
+            // Aquí se guardaría el contenido editado
+        });
+
+        // Ejercicio 24: Reordenar columnas
+        // Este ejercicio requiere el uso de la API de arrastrar y soltar en tablas
+
+        // Ejercicio 25: Copiar tabla
+        document.getElementById('copiarTabla').addEventListener('click', () => {
+            const originalTable = document.getElementById('tablaOriginal');
+            const clone = originalTable.cloneNode(true);
+            document.body.appendChild(clone);
+        });
+    });
+</script>
+
+</body>
+</html>

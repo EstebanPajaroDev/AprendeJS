@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicios Avanzados en JavaScript</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        padding: 10px;
+      }
+      .task {
+        margin: 10px 0;
+      }
+      h2 {
+        color: #007bff;
+      }
+      #comentarios ul {
+        list-style-type: none;
+      }
+      #comentarios li {
+        background-color: #f4f4f4;
+        margin: 5px;
+        padding: 10px;
+      }
+      img {
+        max-width: 150px;
+        margin: 5px;
+      }
+      .galeria {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .pagination-buttons {
+        margin: 10px 0;
+      }
+      .notification {
+        background-color: #f8d7da;
+        color: #721c24;
+        padding: 15px;
+        margin-bottom: 10px;
+        border: 1px solid #f5c6cb;
+      }
+      #canvasEditor {
+        border: 1px solid #000;
+      }
+      .bar-progress {
+        background-color: #e0e0e0;
+        height: 30px;
+        width: 100%;
+        border-radius: 5px;
+        margin-bottom: 5px;
+      }
+      .bar-fill {
+        height: 100%;
+        background-color: #4caf50;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Ejercicios Avanzados en JavaScript</h1>
+
+    <!-- Ejercicio 1: Sistema de Comentarios -->
+    <div class="task">
+      <h2>Ejercicio 1: Sistema de Comentarios</h2>
+      <div id="comentarios">
+        <input
+          type="text"
+          id="nuevoComentario"
+          placeholder="Añadir comentario"
+        />
+        <button id="agregarComentario">Agregar Comentario</button>
+        <ul id="listaComentarios"></ul>
+      </div>
+    </div>
+
+    <!-- Ejercicio 2: Cargar Imágenes desde una API externa -->
+    <div class="task">
+      <h2>Ejercicio 2: Cargar Imágenes desde API Externa</h2>
+      <div id="galeria" class="galeria"></div>
+    </div>
+
+    <!-- Ejercicio 3: Calculadora Científica -->
+    <div class="task">
+      <h2>Ejercicio 3: Calculadora Científica</h2>
+      <input type="number" id="num1" placeholder="Número 1" />
+      <input type="number" id="num2" placeholder="Número 2" />
+      <button id="seno">Seno</button>
+      <button id="coseno">Coseno</button>
+      <div id="resultado"></div>
+    </div>
+
+    <!-- Ejercicio 4: Paginación -->
+    <div class="task">
+      <h2>Ejercicio 4: Paginación</h2>
+      <div id="tablaPaginas">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+        <div class="pagination-buttons">
+          <button id="paginaAnterior">Anterior</button>
+          <button id="paginaSiguiente">Siguiente</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ejercicio 5: Tablero de tareas -->
+    <div class="task">
+      <h2>Ejercicio 5: Tablero de Tareas</h2>
+      <div id="tablero">
+        <div class="column" id="pendientes">
+          <h3>Pendientes</h3>
+        </div>
+        <div class="column" id="enProgreso">
+          <h3>En Progreso</h3>
+        </div>
+        <div class="column" id="completadas">
+          <h3>Completadas</h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ejercicio 6: Exportar a JSON -->
+    <div class="task">
+      <h2>Ejercicio 6: Exportar a JSON</h2>
+      <button id="exportar">Exportar a JSON</button>
+      <div id="datos">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Producto A</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Producto B</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Ejercicio 7: Editor de gráficos -->
+    <div class="task">
+      <h2>Ejercicio 7: Editor de Gráficos</h2>
+      <canvas id="canvasEditor" width="500" height="300"></canvas>
+    </div>
+
+    <!-- Ejercicio 8: Carrusel Infinito de Imágenes -->
+    <div class="task">
+      <h2>Ejercicio 8: Carrusel Infinito de Imágenes</h2>
+      <div id="carrusel">
+        <img src="https://via.placeholder.com/150" alt="Imagen 1" />
+        <img src="https://via.placeholder.com/150" alt="Imagen 2" />
+        <img src="https://via.placeholder.com/150" alt="Imagen 3" />
+      </div>
+    </div>
+
+    <!-- Ejercicio 9: Gráficos de Barras -->
+    <div class="task">
+      <h2>Ejercicio 9: Gráficos de Barras</h2>
+      <div id="graficoBarras"></div>
+    </div>
+
+    <!-- Ejercicio 10: Cargar archivo CSV -->
+    <div class="task">
+      <h2>Ejercicio 10: Cargar archivo CSV</h2>
+      <input type="file" id="fileInput" />
+      <div id="tablaCSV"></div>
+    </div>
+
+    <!-- Ejercicio 11: Notificaciones Dinámicas -->
+    <div class="task">
+      <h2>Ejercicio 11: Notificaciones Dinámicas</h2>
+      <button id="mostrarNotificacion">Mostrar Notificación</button>
+      <div id="notificaciones"></div>
+    </div>
+
+    <!-- Ejercicio 12: Juego de Memoria -->
+    <div class="task">
+      <h2>Ejercicio 12: Juego de Memoria</h2>
+      <div id="juego">
+        <button class="carta">A</button>
+        <button class="carta">B</button>
+        <button class="carta">C</button>
+        <button class="carta">D</button>
+      </div>
+    </div>
+
+    <!-- Ejercicio 13: Validación en Tiempo Real -->
+    <div class="task">
+      <h2>Ejercicio 13: Validación de Formulario en Tiempo Real</h2>
+      <form id="formulario">
+        <input type="email" id="email" placeholder="Correo electrónico" />
+        <span id="errorEmail"></span><br />
+        <input type="submit" value="Enviar" />
+      </form>
+    </div>
+
+    <!-- Ejercicio 14: Reloj Mundial -->
+    <div class="task">
+      <h2>Ejercicio 14: Reloj Mundial</h2>
+      <select id="zonasHorarias"></select>
+      <div id="reloj"></div>
+    </div>
+
+    <!-- Ejercicio 15: Editor de Texto Enriquecido -->
+    <div class="task">
+      <h2>Ejercicio 15: Editor de Texto Enriquecido</h2>
+      <div contenteditable="true" id="editorTexto">Escribe aquí...</div>
+    </div>
+
+    <!-- Ejercicio 16: Historial de Acciones -->
+    <div class="task">
+      <h2>Ejercicio 16: Historial de Acciones</h2>
+      <button id="registrarAccion">Registrar Acción</button>
+      <ul id="historial"></ul>
+    </div>
+
+    <!-- Ejercicio 17: Juego de Ahorcado -->
+    <div class="task">
+      <h2>Ejercicio 17: Juego de Ahorcado</h2>
+      <div id="ahorcado">
+        <p>Palabra a adivinar: <span id="palabra"></span></p>
+        <input type="text" id="letra" placeholder="Adivina una letra" />
+        <button id="adivinar">Adivinar</button>
+      </div>
+    </div>
+
+    <!-- Ejercicio 18: Calendario Dinámico -->
+    <div class="task">
+      <h2>Ejercicio 18: Calendario Dinámico</h2>
+      <div id="calendario"></div>
+    </div>
+
+    <!-- Ejercicio 19: Barra de Progreso -->
+    <div class="task">
+      <h2>Ejercicio 19: Barra de Progreso</h2>
+      <div class="bar-progress">
+        <div class="bar-fill" style="width: 50%"></div>
+      </div>
+    </div>
+
+    <!-- Ejercicio 20: Juego de Dados -->
+    <div class="task">
+      <h2>Ejercicio 20: Juego de Dados</h2>
+      <button id="tirarDados">Tirar Dados</button>
+      <p id="resultadoDados"></p>
+    </div>
+
+    <!-- Ejercicio 21: Localización -->
+    <div class="task">
+      <h2>Ejercicio 21: Localización Geográfica</h2>
+      <button id="obtenerUbicacion">Obtener Ubicación</button>
+      <p id="ubicacion"></p>
+    </div>
+
+    <!-- Ejercicio 22: Generador de Contraseñas -->
+    <div class="task">
+      <h2>Ejercicio 22: Generador de Contraseñas</h2>
+      <button id="generarContraseña">Generar Contraseña</button>
+      <p id="contraseñaGenerada"></p>
+    </div>
+
+    <!-- Ejercicio 23: Arrastrar y Soltar -->
+    <div class="task">
+      <h2>Ejercicio 23: Arrastrar y Soltar</h2>
+      <div id="arrastrar" draggable="true">Arrástrame</div>
+      <div id="soltar"></div>
+    </div>
+
+    <!-- Ejercicio 24: Generador de Números Aleatorios -->
+    <div class="task">
+      <h2>Ejercicio 24: Generador de Números Aleatorios</h2>
+      <button id="generarNumero">Generar Número</button>
+      <p id="numeroAleatorio"></p>
+    </div>
+
+    <!-- Ejercicio 25: Simulador de Búsqueda -->
+    <div class="task">
+      <h2>Ejercicio 25: Simulador de Búsqueda</h2>
+      <input type="text" id="busqueda" placeholder="Buscar..." />
+      <ul id="resultadosBusqueda"></ul>
+    </div>
+
+    <script>
+      // Ejercicio 1: Comentarios
+      const agregarComentarioBtn = document.getElementById("agregarComentario");
+      const listaComentarios = document.getElementById("listaComentarios");
+      const nuevoComentarioInput = document.getElementById("nuevoComentario");
+      agregarComentarioBtn.addEventListener("click", function () {
+        const comentario = nuevoComentarioInput.value;
+        if (comentario) {
+          const li = document.createElement("li");
+          li.textContent = comentario;
+          listaComentarios.appendChild(li);
+          nuevoComentarioInput.value = "";
+        }
+      });
+
+      // Ejercicio 2: Cargar imágenes desde API
+      const galeria = document.getElementById("galeria");
+      fetch("https://api.unsplash.com/photos/?client_id=YOUR_API_KEY") // Reemplaza con tu propia API Key
+        .then((response) => response.json())
+        .then((data) => {
+          data.forEach((image) => {
+            const img = document.createElement("img");
+            img.src = image.urls.small;
+            img.alt = image.alt_description;
+            galeria.appendChild(img);
+          });
+        })
+        .catch((error) => console.log("Error al cargar imágenes: ", error));
+
+      // Ejercicio 3: Calculadora Científica
+      const senoBtn = document.getElementById("seno");
+      const cosenoBtn = document.getElementById("coseno");
+      const resultadoDiv = document.getElementById("resultado");
+      senoBtn.addEventListener("click", function () {
+        const num1 = parseFloat(document.getElementById("num1").value);
+        resultadoDiv.textContent = "Seno: " + Math.sin(num1);
+      });
+      cosenoBtn.addEventListener("click", function () {
+        const num2 = parseFloat(document.getElementById("num2").value);
+        resultadoDiv.textContent = "Coseno: " + Math.cos(num2);
+      });
+
+      // Ejercicio 4: Paginación
+      const tablaPaginas = document.getElementById("tablaPaginas");
+      const tablaBody = tablaPaginas.querySelector("tbody");
+      let paginaActual = 1;
+      const itemsPorPagina = 5;
+      const datos = [
+        { id: 1, nombre: "Elemento 1" },
+        { id: 2, nombre: "Elemento 2" },
+        { id: 3, nombre: "Elemento 3" },
+        { id: 4, nombre: "Elemento 4" },
+        { id: 5, nombre: "Elemento 5" },
+        { id: 6, nombre: "Elemento 6" },
+        { id: 7, nombre: "Elemento 7" },
+        { id: 8, nombre: "Elemento 8" },
+        { id: 9, nombre: "Elemento 9" },
+        { id: 10, nombre: "Elemento 10" },
+        { id: 11, nombre: "Elemento 11" },
+        { id: 12, nombre: "Elemento 12" },
+      ];
+
+      function cargarDatos() {
+        tablaBody.innerHTML = "";
+        const inicio = (paginaActual - 1) * itemsPorPagina;
+        const fin = inicio + itemsPorPagina;
+        const itemsPagina = datos.slice(inicio, fin);
+        itemsPagina.forEach((item) => {
+          const tr = document.createElement("tr");
+          tr.innerHTML = `<td>${item.id}</td><td>${item.nombre}</td>`;
+          tablaBody.appendChild(tr);
+        });
+      }
+
+      cargarDatos();
+      document
+        .getElementById("paginaAnterior")
+        .addEventListener("click", function () {
+          if (paginaActual > 1) {
+            paginaActual--;
+            cargarDatos();
+          }
+        });
+
+      document
+        .getElementById("paginaSiguiente")
+        .addEventListener("click", function () {
+          if (paginaActual * itemsPorPagina < datos.length) {
+            paginaActual++;
+            cargarDatos();
+          }
+        });
+
+      // Ejercicio 5: Tablero de Tareas
+      const columnas = {
+        pendientes: document.getElementById("pendientes"),
+        enProgreso: document.getElementById("enProgreso"),
+        completadas: document.getElementById("completadas"),
+      };
+
+      let tareas = [
+        { nombre: "Tarea 1", estado: "pendientes" },
+        { nombre: "Tarea 2", estado: "enProgreso" },
+        { nombre: "Tarea 3", estado: "completadas" },
+      ];
+
+      function mostrarTareas() {
+        Object.keys(columnas).forEach((columna) => {
+          columnas[columna].innerHTML = `<h3>${
+            columna.charAt(0).toUpperCase() + columna.slice(1)
+          }</h3>`;
+        });
+
+        tareas.forEach((tarea) => {
+          const div = document.createElement("div");
+          div.textContent = tarea.nombre;
+          div.classList.add("tarea");
+          columnas[tarea.estado].appendChild(div);
+        });
+      }
+
+      mostrarTareas();
+
+      // Ejercicio 6: Exportar a JSON
+      document
+        .getElementById("exportar")
+        .addEventListener("click", function () {
+          const datosExportar = [
+            { id: 1, nombre: "Producto A" },
+            { id: 2, nombre: "Producto B" },
+          ];
+          const json = JSON.stringify(datosExportar);
+          const blob = new Blob([json], { type: "application/json" });
+          const enlace = document.createElement("a");
+          enlace.href = URL.createObjectURL(blob);
+          enlace.download = "datos.json";
+          enlace.click();
+        });
+
+      // Ejercicio 7: Editor de Gráficos
+      const canvas = document.getElementById("canvasEditor");
+      const ctx = canvas.getContext("2d");
+      ctx.fillStyle = "blue";
+      ctx.fillRect(50, 50, 200, 100);
+
+      // Ejercicio 8: Carrusel Infinito de Imágenes
+      const carrusel = document.getElementById("carrusel");
+      const imagenes = carrusel.getElementsByTagName("img");
+      let indice = 0;
+      setInterval(function () {
+        imagenes[indice].style.display = "none";
+        indice = (indice + 1) % imagenes.length;
+        imagenes[indice].style.display = "block";
+      }, 2000);
+
+      // Ejercicio 9: Gráficos de Barras
+      const graficoBarras = document.getElementById("graficoBarras");
+      const barra1 = document.createElement("div");
+      barra1.style.width = "50%";
+      barra1.style.height = "30px";
+      barra1.style.backgroundColor = "green";
+      graficoBarras.appendChild(barra1);
+
+      const barra2 = document.createElement("div");
+      barra2.style.width = "75%";
+      barra2.style.height = "30px";
+      barra2.style.backgroundColor = "blue";
+      graficoBarras.appendChild(barra2);
+
+      // Ejercicio 10: Cargar archivo CSV
+      document
+        .getElementById("fileInput")
+        .addEventListener("change", function (event) {
+          const file = event.target.files[0];
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            const contenido = e.target.result;
+            const filas = contenido.split("\n");
+            const tablaCSV = document.getElementById("tablaCSV");
+            const tabla = document.createElement("table");
+            filas.forEach((fila) => {
+              const tr = document.createElement("tr");
+              const celdas = fila.split(",");
+              celdas.forEach((celda) => {
+                const td = document.createElement("td");
+                td.textContent = celda;
+                tr.appendChild(td);
+              });
+              tabla.appendChild(tr);
+            });
+            tablaCSV.innerHTML = "";
+            tablaCSV.appendChild(tabla);
+          };
+          reader.readAsText(file);
+        });
+
+      // Ejercicio 11: Notificaciones Dinámicas
+      document
+        .getElementById("mostrarNotificacion")
+        .addEventListener("click", function () {
+          const notificacion = document.createElement("div");
+          notificacion.classList.add("notification");
+          notificacion.textContent = "¡Nueva Notificación!";
+          document.getElementById("notificaciones").appendChild(notificacion);
+        });
+
+      // Ejercicio 12: Juego de Memoria
+      const cartas = document.querySelectorAll(".carta");
+      let cartaSeleccionada = null;
+      cartas.forEach((carta) => {
+        carta.addEventListener("click", function () {
+          if (!cartaSeleccionada) {
+            cartaSeleccionada = carta;
+            carta.textContent = carta.textContent === "A" ? "B" : "A";
+          } else if (carta !== cartaSeleccionada) {
+            carta.textContent = carta.textContent === "A" ? "B" : "A";
+            cartaSeleccionada = null;
+          }
+        });
+      });
+
+      // Ejercicio 13: Validación en Tiempo Real
+      const formulario = document.getElementById("formulario");
+      const emailInput = document.getElementById("email");
+      const errorEmail = document.getElementById("errorEmail");
+      emailInput.addEventListener("input", function () {
+        const email = emailInput.value;
+        const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+        if (!regex.test(email)) {
+          errorEmail.textContent = "Correo inválido";
+        } else {
+          errorEmail.textContent = "";
+        }
+      });
+
+      // Ejercicio 14: Reloj Mundial
+      const zonasHorarias = document.getElementById("zonasHorarias");
+      const relojDiv = document.getElementById("reloj");
+      const zonas = ["UTC", "America/New_York", "Europe/London", "Asia/Tokyo"];
+      zonasHorarias.innerHTML = zonas
+        .map((zona) => `<option value="${zona}">${zona}</option>`)
+        .join("");
+      zonasHorarias.addEventListener("change", actualizarReloj);
+
+      function actualizarReloj() {
+        const zonaSeleccionada = zonasHorarias.value;
+        const fecha = new Date().toLocaleString("en-US", {
+          timeZone: zonaSeleccionada,
+        });
+        relojDiv.textContent = `${zonaSeleccionada}: ${fecha}`;
+      }
+
+      // Ejercicio 15: Editor de Texto Enriquecido
+      const editorTexto = document.getElementById("editorTexto");
+      editorTexto.addEventListener("input", function () {
+        console.log("Texto editado:", editorTexto.innerHTML);
+      });
+
+      // Ejercicio 16: Historial de Acciones
+      document
+        .getElementById("registrarAccion")
+        .addEventListener("click", function () {
+          const accion = prompt("¿Qué acción has realizado?");
+          if (accion) {
+            const li = document.createElement("li");
+            li.textContent = accion;
+            document.getElementById("historial").appendChild(li);
+          }
+        });
+
+      // Ejercicio 17: Juego de Ahorcado
+      const palabra = "JAVASCRIPT";
+      const palabraDiv = document.getElementById("palabra");
+      const letrasAdivinadas = [];
+      palabraDiv.textContent = palabra.replace(/./g, "_ ");
+      document
+        .getElementById("adivinar")
+        .addEventListener("click", function () {
+          const letra = document.getElementById("letra").value.toUpperCase();
+          if (palabra.includes(letra) && !letrasAdivinadas.includes(letra)) {
+            letrasAdivinadas.push(letra);
+            palabraDiv.textContent = palabra
+              .split("")
+              .map((letra) => (letrasAdivinadas.includes(letra) ? letra : "_"))
+              .join(" ");
+          }
+        });
+
+      // Ejercicio 18: Calendario Dinámico
+      const calendarioDiv = document.getElementById("calendario");
+      const fechaHoy = new Date();
+      calendarioDiv.textContent = `${fechaHoy.getDate()}/${
+        fechaHoy.getMonth() + 1
+      }/${fechaHoy.getFullYear()}`;
+
+      // Ejercicio 19: Barra de Progreso
+      let progreso = 0;
+      const barFill = document.querySelector(".bar-fill");
+      setInterval(function () {
+        if (progreso < 100) {
+          progreso += 10;
+          barFill.style.width = progreso + "%";
+        }
+      }, 1000);
+
+      // Ejercicio 20: Juego de Dados
+      document
+        .getElementById("tirarDados")
+        .addEventListener("click", function () {
+          const dado1 = Math.floor(Math.random() * 6) + 1;
+          const dado2 = Math.floor(Math.random() * 6) + 1;
+          document.getElementById(
+            "resultadoDados"
+          ).textContent = `Resultados: Dado 1: ${dado1}, Dado 2: ${dado2}`;
+        });
+
+      // Ejercicio 21: Localización Geográfica
+      document
+        .getElementById("obtenerUbicacion")
+        .addEventListener("click", function () {
+          if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+              document.getElementById(
+                "ubicacion"
+              ).textContent = `Lat: ${position.coords.latitude}, Long: ${position.coords.longitude}`;
+            });
+          } else {
+            alert("Geolocalización no soportada");
+          }
+        });
+
+      // Ejercicio 22: Historial de Navegación
+      document
+        .getElementById("verHistorial")
+        .addEventListener("click", function () {
+          const historial = JSON.parse(localStorage.getItem("historial")) || [];
+          alert("Historial: " + historial.join(", "));
+        });
+
+      // Ejercicio 23: Juego de Tic-Tac-Toe
+      const casillas = document.querySelectorAll(".casilla");
+      let jugador = "X";
+      casillas.forEach((casilla) => {
+        casilla.addEventListener("click", function () {
+          if (casilla.textContent === "") {
+            casilla.textContent = jugador;
+            jugador = jugador === "X" ? "O" : "X";
+          }
+        });
+      });
+
+      // Ejercicio 24: Validación de Contraseña
+      const contraseñaInput = document.getElementById("contraseña");
+      const errorContraseña = document.getElementById("errorContraseña");
+      contraseñaInput.addEventListener("input", function () {
+        const contraseña = contraseñaInput.value;
+        if (contraseña.length < 6) {
+          errorContraseña.textContent =
+            "La contraseña debe tener al menos 6 caracteres";
+        } else {
+          errorContraseña.textContent = "";
+        }
+      });
+
+      // Ejercicio 5: Tablero de tareas
+            // Función para aplicar la configuración
+        function aplicarConfiguracion() {
+            const colorFondo = localStorage.getItem('colorFondo') || '#ffffff';
+            const colorTexto = localStorage.getItem('colorTexto') || '#000000';
+            const fuente = localStorage.getItem('fuente') || 'Arial';
+            const tema = localStorage.getItem('tema') || 'light';
+
+            // Aplicando los estilos a la página
+            document.body.style.backgroundColor = colorFondo;
+            document.body.style.color = colorTexto;
+            document.body.style.fontFamily = fuente;
+
+            // Aplicar tema oscuro o claro
+            if (tema === 'dark') {
+                document.body.style.backgroundColor = '#333';
+                document.body.style.color = '#fff';
+            }
+
+            // Establecer los valores en los controles del formulario
+            document.getElementById('colorFondo').value = colorFondo;
+            document.getElementById('colorTexto').value = colorTexto;
+            document.getElementById('fuente').value = fuente;
+            document.getElementById('tema').value = tema;
+        }
+
+        // Función para guardar la configuración en localStorage
+        document.getElementById('guardarConfig').addEventListener('click', function() {
+            const colorFondo = document.getElementById('colorFondo').value;
+            const colorTexto = document.getElementById('colorTexto').value;
+            const fuente = document.getElementById('fuente').value;
+            const tema = document.getElementById('tema').value;
+
+            // Guardando en localStorage
+            localStorage.setItem('colorFondo', colorFondo);
+            localStorage.setItem('colorTexto', colorTexto);
+            localStorage.setItem('fuente', fuente);
+            localStorage.setItem('tema', tema);
+
+            // Aplicar la nueva configuración
+            aplicarConfiguracion();
+        });
+
+        // Cargar configuración al inicio
+        window.onload = function() {
+            aplicarConfiguracion();
+        };
+      // Aquí irían las implementaciones restantes...
+    </script>
+  </body>
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios de Nivel Normal</title>
+    <style>
+        .resaltado {
+            background-color: yellow;
+        }
+        .caja {
+            margin: 10px;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+        .claro {
+            background-color: white;
+            color: black;
+        }
+        .oscuro {
+            background-color: black;
+            color: white;
+        }
+        #barra {
+            background-color: blue;
+            width: 0%;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h1 id="titulo">Ejercicios de Nivel Normal</h1>
+
+<!-- Ejercicio 1: Cambia el color de fondo de todos los div a amarillo -->
+<div>Contenido 1</div>
+<div>Contenido 2</div>
+
+<!-- Ejercicio 2: Agrega un borde rojo de 2px a todos los elementos con clase "resaltado" -->
+<p class="resaltado">Texto destacado</p>
+<p class="resaltado">Texto destacado 2</p>
+
+<!-- Ejercicio 3: Alterna la visibilidad de un elemento con id "toggle" -->
+<button id="toggle">Mostrar/Ocultar</button>
+<div id="toggle-content" style="display: block;">Este es el contenido que se puede ocultar o mostrar.</div>
+
+<!-- Ejercicio 4: Agrega una nueva fila a una tabla con id "tabla" con tres celdas de texto -->
+<table id="tabla">
+    <tr>
+        <td>Celda 1</td>
+        <td>Celda 2</td>
+        <td>Celda 3</td>
+    </tr>
+</table>
+
+<!-- Ejercicio 5: Cambia el contenido de los botones con clase "accion" -->
+<button class="accion">Botón 1</button>
+<button class="accion">Botón 2</button>
+
+<!-- Ejercicio 6: Cambia el color del texto de un elemento con id "titulo" cada 2 segundos -->
+<p id="titulo">Texto que cambia de color</p>
+
+<!-- Ejercicio 7: Reproduce un archivo de audio -->
+<audio id="audio" src="audio.mp3" preload="auto"></audio>
+<button id="play">Reproducir audio</button>
+
+<!-- Ejercicio 8: Agrega una imagen al final de un contenedor con id "galeria" -->
+<div id="galeria"></div>
+
+<!-- Ejercicio 9: Cambia el estilo del primer <p> en cada contenedor con clase "caja" -->
+<div class="caja">
+    <p>Primer párrafo en caja 1</p>
+    <p>Otro párrafo</p>
+</div>
+
+<!-- Ejercicio 10: Remueve todas las filas de una tabla con id "datos" excepto la primera fila -->
+<table id="datos">
+    <tr>
+        <td>Fila 1</td>
+    </tr>
+    <tr>
+        <td>Fila 2</td>
+    </tr>
+    <tr>
+        <td>Fila 3</td>
+    </tr>
+</table>
+
+<!-- Ejercicio 11: Muestra el valor de un input con id "entrada" en una alerta -->
+<input type="text" id="entrada" value="Texto inicial">
+<button id="alerta">Mostrar valor</button>
+
+<!-- Ejercicio 12: Crea un contador -->
+<span id="contador">0</span>
+<button id="incrementar">Incrementar contador</button>
+
+<!-- Ejercicio 13: Cambia el color de fondo de los elementos con clase "fondo" al azar -->
+<button id="aleatorio">Cambiar color de fondo</button>
+<div class="fondo">Elemento 1</div>
+<div class="fondo">Elemento 2</div>
+
+<!-- Ejercicio 14: Agrega un nuevo botón al final de un contenedor con id "acciones" -->
+<div id="acciones"></div>
+
+<!-- Ejercicio 15: Copia el texto seleccionado -->
+<p id="seleccionado">Texto para seleccionar</p>
+<input type="text" id="copiar">
+
+<!-- Ejercicio 16: Muestra la cantidad de caracteres que el usuario ha escrito en un input -->
+<input type="text" id="contadorInput">
+<p id="contadorTexto">0 caracteres</p>
+
+<!-- Ejercicio 17: Cambia la clase entre "claro" y "oscuro" al hacer clic -->
+<button id="tema">Cambiar tema</button>
+
+<!-- Ejercicio 18: Evita la redirección del enlace con id "detener" -->
+<a href="https://www.example.com" id="detener">Enlace para detener</a>
+
+<!-- Ejercicio 19: Ordena una lista de elementos alfabéticamente -->
+<ul id="lista">
+    <li>C</li>
+    <li>B</li>
+    <li>A</li>
+</ul>
+
+<!-- Ejercicio 20: Muestra la posición del mouse dentro de un contenedor -->
+<div id="area" style="width: 300px; height: 300px; background-color: lightgray;">Área para mover el mouse</div>
+
+<!-- Ejercicio 21: Cambia la imagen de fondo de un elemento con id "banner" -->
+<div id="banner" style="width: 300px; height: 200px; background-color: lightblue;">Banner</div>
+
+<!-- Ejercicio 22: Agrega una animación que aumente el ancho de un elemento -->
+<div id="barra"></div>
+
+<!-- Ejercicio 23: Limpia los inputs dentro de un formulario -->
+<form id="formulario">
+    <input type="text" value="Texto 1">
+    <input type="text" value="Texto 2">
+    <button type="button" id="limpiar">Limpiar formulario</button>
+</form>
+
+<!-- Ejercicio 24: Cambia el texto de un botón entre "Play" y "Pause" -->
+<button id="playPause">Play</button>
+
+<!-- Ejercicio 25: Muestra en consola las etiquetas únicas dentro de un contenedor -->
+<div id="contenedor">
+    <div>Div 1</div>
+    <p>Párrafo 1</p>
+    <span>Span 1</span>
+    <div>Div 2</div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    // Ejercicio 1
+    document.querySelectorAll('div').forEach(div => div.style.backgroundColor = 'yellow');
+
+    // Ejercicio 2
+    document.querySelectorAll('.resaltado').forEach(elem => elem.style.border = '2px solid red');
+
+    // Ejercicio 3
+    document.getElementById('toggle').addEventListener('click', () => {
+        const content = document.getElementById('toggle-content');
+        content.style.display = content.style.display === 'none' ? 'block' : 'none';
+    });
+
+    // Ejercicio 4
+    const tabla = document.getElementById('tabla');
+    const nuevaFila = tabla.insertRow();
+    for (let i = 0; i < 3; i++) {
+        const celda = nuevaFila.insertCell();
+        celda.textContent = `Celda nueva ${i + 1}`;
+    }
+
+    // Ejercicio 5
+    document.querySelectorAll('.accion').forEach(button => {
+        button.addEventListener('click', () => {
+            button.textContent = 'Presionado';
+        });
+    });
+
+    // Ejercicio 6
+    let colorIndex = 0;
+    const colors = ['red', 'green', 'blue', 'purple'];
+    setInterval(() => {
+        document.getElementById('titulo').style.color = colors[colorIndex];
+        colorIndex = (colorIndex + 1) % colors.length;
+    }, 2000);
+
+    // Ejercicio 7
+    document.getElementById('play').addEventListener('click', () => {
+        const audio = document.getElementById('audio');
+        audio.play();
+    });
+
+    // Ejercicio 8
+    const imagen = document.createElement('img');
+    imagen.src = 'https://via.placeholder.com/150';
+    document.getElementById('galeria').appendChild(imagen);
+
+    // Ejercicio 9
+    document.querySelectorAll('.caja p:first-of-type').forEach(p => p.style.color = 'orange');
+
+    // Ejercicio 10
+    const datosTabla = document.getElementById('datos');
+    for (let i = 1; i < datosTabla.rows.length; i++) {
+        datosTabla.deleteRow(i);
+    }
+
+    // Ejercicio 11
+    document.getElementById('alerta').addEventListener('click', () => {
+        const valor = document.getElementById('entrada').value;
+        alert(valor);
+    });
+
+    // Ejercicio 12
+    document.getElementById('incrementar').addEventListener('click', () => {
+        const contador = document.getElementById('contador');
+        contador.textContent = parseInt(contador.textContent) + 1;
+    });
+
+    // Ejercicio 13
+    document.getElementById('aleatorio').addEventListener('click', () => {
+        const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+        document.querySelectorAll('.fondo').forEach(div => div.style.backgroundColor = randomColor);
+    });
+
+    // Ejercicio 14
+    const nuevoBoton = document.createElement('button');
+    nuevoBoton.textContent = 'Nuevo botón';
+    nuevoBoton.addEventListener('click', () => {
+        console.log('Botón presionado');
+    });
+    document.getElementById('acciones').appendChild(nuevoBoton);
+
+    // Ejercicio 15
+    document.getElementById('seleccionado').addEventListener('mouseup', () => {
+        const texto = window.getSelection().toString();
+        document.getElementById('copiar').value = texto;
+    });
+
+    // Ejercicio 16
+    document.getElementById('contadorInput').addEventListener('input', () => {
+        document.getElementById('contadorTexto').textContent = document.getElementById('contadorInput').value.length + ' caracteres';
+    });
+
+    // Ejercicio 17
+    document.getElementById('tema').addEventListener('click', () => {
+        const body = document.body;
+        body.classList.toggle('claro');
+        body.classList.toggle('oscuro');
+    });
+
+    // Ejercicio 18
+    document.getElementById('detener').addEventListener('click', (e) => {
+        e.preventDefault();
+        console.log('Redirección evitada');
+    });
+
+    // Ejercicio 19
+    const lista = document.getElementById('lista');
+    const items = Array.from(lista.children);
+    items.sort((a, b) => a.textContent.localeCompare(b.textContent));
+    items.forEach(item => lista.appendChild(item));
+
+    // Ejercicio 20
+    document.getElementById('area').addEventListener('mousemove', (e) => {
+        console.log(`X: ${e.offsetX}, Y: ${e.offsetY}`);
+    });
+
+    // Ejercicio 21
+    document.getElementById('banner').addEventListener('mouseover', () => {
+        document.getElementById('banner').style.backgroundImage = 'url(https://via.placeholder.com/300x200)';
+    });
+
+    // Ejercicio 22
+    let width = 0;
+    setInterval(() => {
+        if (width < 100) {
+            width += 1;
+            document.getElementById('barra').style.width = width + '%';
+        }
+    }, 1000);
+
+    // Ejercicio 23
+    document.getElementById('limpiar').addEventListener('click', () => {
+        document.querySelectorAll('#formulario input').forEach(input => input.value = '');
+    });
+
+    // Ejercicio 24
+    document.getElementById('playPause').addEventListener('click', (e) => {
+        const button = e.target;
+        if (button.textContent === 'Play') {
+            button.textContent = 'Pause';
+        } else {
+            button.textContent = 'Play';
+        }
+    });
+
+    // Ejercicio 25
+    const contenedor = document.getElementById('contenedor');
+    Array.from(contenedor.children).forEach(child => {
+        console.log(child.tagName);
+    });
+});
+</script>
+
+</body>
+</html>
