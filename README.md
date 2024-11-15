@@ -15,7 +15,7 @@
 5. [Guía de Instalación](https://github.com/EstebanPajaroDev/AprendeJS/tree/Primary?tab=readme-ov-file#%EF%B8%8F-gu%C3%ADa-de-instalaci%C3%B3n)
 6. [Cómo Contribuir](https://github.com/EstebanPajaroDev/AprendeJS/tree/Primary?tab=readme-ov-file#-c%C3%B3mo-contribuir)
 7. [Buenas Practicas](https://github.com/EstebanPajaroDev/AprendeJS/blob/Primary/README.md#-buenas-pr%C3%A1cticas)
-8. [Contacto](#contacto)
+8. [Contacto](https://github.com/EstebanPajaroDev)
 
 ---
 
