@@ -4,8 +4,6 @@
 
 ¡Bienvenido a mi repositorio de ejercicios de JavaScript! Aquí encontrarás una serie de retos prácticos tanto para manipular el DOM como para mejorar tus habilidades de lógica de programación. Si eres un apasionado del desarrollo web y te encanta mejorar tu código, este repositorio es para ti.
 
-
-
 ---
 
 ## 📂 Contenido del Repositorio
